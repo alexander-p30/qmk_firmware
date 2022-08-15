@@ -94,10 +94,10 @@ ESC_LT(L_FUNC), HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,  HOME_1,  HOME_2,  HOME_3,  HOME_4,    KC_5,                         KC_6,  HOME_7,  HOME_8,  HOME_9,  HOME_0,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB, XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU, XXXXXXX,                      XXXXXXX, XXXXXXX, CEDILLA, XXXXXXX, XXXXXXX, KC_BSPC,
+      XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU, KC_MPRV,                      KC_MNXT, XXXXXXX, CEDILLA, XXXXXXX, XXXXXXX, XXXXXXX,
 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
+                                          XXXXXXX, KC_MPLY,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
