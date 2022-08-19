@@ -54,11 +54,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HM_LBRC RSFT_T(KC_LBRC)
 #define HM_RBRC RCTL_T(KC_RBRC)
 
-// Right-hand home row mods
+// Right-hand func layer home row mods
+#define RHM_DOWN RSFT_T(KC_DOWN)
+#define RHM_UP RCTL_T(KC_UP)
+#define RHM_RGHT RALT_T(KC_RIGHT)
+
+// Left-hand func layer home row mods
 #define HM_DEL RGUI_T(KC_DEL)
-#define HM_DOWN RSFT_T(KC_DOWN)
-#define HM_UP RCTL_T(KC_UP)
-#define HM_RGHT RALT_T(KC_RIGHT)
+#define LHM_LEFT RALT_T(KC_DOWN)
+#define LHM_DOWN RCTL_T(KC_UP)
+#define LHM_UP RSFT_T(KC_RIGHT)
 
 // Modified keys
 #define C_PGDN C(KC_PGDN)
@@ -136,9 +141,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HM_DEL, KC_LEFT, HM_DOWN,   HM_UP, HM_RGHT,                      KC_LEFT, HM_DOWN,   HM_UP, HM_RGHT, KC_RGUI, XXXXXXX,
+      XXXXXXX,  HM_DEL,LHM_LEFT,LHM_DOWN,  LHM_UP, KC_RIGHT,                      KC_LEFT,RHM_DOWN, RHM_UP,RHM_RGHT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, XXXXXXX,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, XXXXXXX, XXXXXXX,
+      XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, KC_PSCR,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_BSPC, RGB_MOD, KC_PGUP,    KC_PSCR, KC_TAB, RGB_TOG
                                       //`--------------------------'  `--------------------------'
