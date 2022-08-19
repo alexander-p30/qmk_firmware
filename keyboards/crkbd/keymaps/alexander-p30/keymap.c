@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOME_8 RCTL_T(KC_8)
 #define HOME_9 RALT_T(KC_9)
 #define HOME_0 RGUI_T(KC_0)
-//
+
 // Left-hand home row (number layer) mods
 #define HM_GRV  LGUI_T(KC_GRV)
 #define HM_MINS LALT_T(KC_MINS)
@@ -53,13 +53,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Right-hand home row mods
 #define HM_LBRC RSFT_T(KC_LBRC)
 #define HM_RBRC RCTL_T(KC_RBRC)
-//
-// Right-hand home row mods
-#define HM_LEFT RSFT_T(KC_LEFT)
-#define HM_DOWN RCTL_T(KC_DOWN)
-#define HM_UP RALT_T(KC_UP)
-#define HM_RGHT RGUI_T(KC_RIGHT)
 
+// Right-hand home row mods
+#define HM_DEL RGUI_T(KC_DEL)
+#define HM_DOWN RSFT_T(KC_DOWN)
+#define HM_UP RCTL_T(KC_UP)
+#define HM_RGHT RALT_T(KC_RIGHT)
+
+// Modified keys
+#define C_PGDN C(KC_PGDN)
+#define C_PGUP C(KC_PGUP)
+#define SC_PGDN S(C(KC_PGDN))
+#define SC_PGUP S(C(KC_PGUP))
+
+// Tap for SPC hold for Layer Toggle
+#define SPC_LT(layer) LT(layer, KC_SPC)
+// Tap for Enter hold for Layer Toggle
+#define ENT_LT(layer) LT(layer, KC_ENT)
 // Tap for Esc hold for Layer Toggle
 #define ESC_LT(layer) LT(layer, KC_ESC)
 // Tap for Backspace hold for Layer Toggle
@@ -88,11 +98,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-ESC_LT(L_FUNC), HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SCLN,XXXXXXX,
+      XXXXXXX,  HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SCLN,XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                DL_LT(L_TRANS),BS_LT(L_SYM), KC_SPC,     KC_ENT,TB_LT(L_NUM),QT_LT(L_TRANS)
+                         BS_LT(L_TRANS),ESC_LT(L_SYM),SPC_LT(L_FUNC),  ENT_LT(L_FUNC),TB_LT(L_NUM),QT_LT(L_TRANS)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -103,10 +113,10 @@ ESC_LT(L_FUNC), HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  HOME_1,  HOME_2,  HOME_3,  HOME_4,    KC_5,                         KC_6,  HOME_7,  HOME_8,  HOME_9,  HOME_0, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU, KC_MPRV,                      KC_MNXT, XXXXXXX, CEDILLA, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, KC_MPLY, KC_VOLD, KC_VOLU, KC_MPRV,                      KC_MNXT, KC_MUTE, CEDILLA, XXXXXXX, XXXXXXX, XXXXXXX,
 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_MPLY,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
+                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -116,9 +126,9 @@ ESC_LT(L_FUNC), HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, XXXXXXX,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, KC_PGUP, XXXXXXX, KC_PGDN, XXXXXXX,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, KC_MUTE, XXXXXXX
+                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -126,11 +136,11 @@ ESC_LT(L_FUNC), HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_PSCR,                      HM_LEFT, HM_DOWN,   HM_UP, HM_RGHT, XXXXXXX, XXXXXXX,
+      XXXXXXX,  HM_DEL, KC_LEFT, HM_DOWN,   HM_UP, HM_RGHT,                      KC_LEFT, HM_DOWN,   HM_UP, HM_RGHT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, XXXXXXX, XXXXXXX,
+      XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, XXXXXXX,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, RGB_MOD, KC_PGUP,    KC_PGDN, RGB_TOG, XXXXXXX
+                                          KC_BSPC, RGB_MOD, KC_PGUP,    KC_PSCR, KC_TAB, RGB_TOG
                                       //`--------------------------'  `--------------------------'
   ),
 
