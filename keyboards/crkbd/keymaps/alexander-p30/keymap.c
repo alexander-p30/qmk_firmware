@@ -61,9 +61,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Left-hand func layer home row mods
 #define HM_DEL RGUI_T(KC_DEL)
-#define LHM_LEFT RALT_T(KC_DOWN)
-#define LHM_DOWN RCTL_T(KC_UP)
-#define LHM_UP RSFT_T(KC_RIGHT)
+#define LHM_LEFT RALT_T(KC_LEFT)
+#define LHM_DOWN RCTL_T(KC_DOWN)
+#define LHM_UP RSFT_T(KC_UP)
 
 // Modified keys
 #define C_PGDN C(KC_PGDN)
@@ -107,9 +107,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                         BS_LT(L_TRANS),ESC_LT(L_SYM),SPC_LT(L_FUNC),  ENT_LT(L_FUNC),TB_LT(L_NUM),QT_LT(L_TRANS)
+                                      KC_BSPC,KC_ESC,SPC_LT(L_FUNC),  ENT_LT(L_SYM),TB_LT(L_NUM),QT_LT(L_TRANS)
                                       //`--------------------------'  `--------------------------'
-
   ),
 
   [L_NUM] = LAYOUT_split_3x6_3(
@@ -131,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, XXXXXXX,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, KC_PGUP, XXXXXXX, KC_PGDN, XXXXXXX,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, KC_PGUP, XXXXXXX, KC_PGDN,  KC_ENT,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -145,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, KC_PSCR,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, RGB_MOD, KC_PGUP,    KC_PSCR, KC_TAB, RGB_TOG
+                                          KC_BSPC, RGB_MOD, KC_PGUP,    KC_PGDN, KC_TAB, RGB_TOG
                                       //`--------------------------'  `--------------------------'
   ),
 
