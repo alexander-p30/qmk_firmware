@@ -126,11 +126,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_TILD, KC_UNDS, KC_PLUS, KC_PIPE, XXXXXXX,                      XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_TILD, KC_UNDS, KC_PLUS, KC_PIPE, RGB_TOG,                      XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, XXXXXXX,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RGUI, XXXXXXX,
+      XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, RGB_MOD,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, KC_PGUP, XXXXXXX, KC_PGDN,  KC_ENT,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
+       EE_CLR, XXXXXXX, KC_PGUP, KC_PGDN, XXXXXXX,  KC_ENT,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -191,9 +191,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (!is_keyboard_master()) {
-    return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
-  }
+  /* if (!is_keyboard_master()) { */
+  /*   return OLED_ROTATION_180;  // flips the display 180 degrees if offhand */
+  /* } */
   return rotation;
 }
 
