@@ -52,7 +52,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     /* #define RGBLIGHT_EFFECT_ALTERNATING */
     /* #define RGBLIGHT_EFFECT_TWINKLE */
     #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_STATIC_LIGHT	
-    #define RGBLIGHT_DEFAULT_HUE 180
+    #define RGBLIGHT_DEFAULT_HUE 178
+    #define RGBLIGHT_DEFAULT_VAL 60
+    #define RGBLIGHT_DEFAULT_SAT 240
     #define RGBLIGHT_SLEEP
 #endif
 
