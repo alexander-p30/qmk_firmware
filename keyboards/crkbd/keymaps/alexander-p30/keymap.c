@@ -21,48 +21,48 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "symbols.h"
 
 // Left-hand home row mods
-#define HOME_A LGUI_T(KC_A)
+#define HOME_A LCTL_T(KC_A)
 #define HOME_S LALT_T(KC_S)
-#define HOME_D LCTL_T(KC_D)
+#define HOME_D LGUI_T(KC_D)
 #define HOME_F LSFT_T(KC_F)
 
 // Right-hand home row mods
 #define HOME_J RSFT_T(KC_J)
-#define HOME_K RCTL_T(KC_K)
+#define HOME_K RGUI_T(KC_K)
 #define HOME_L LALT_T(KC_L)
-#define HOME_SCLN RGUI_T(KC_SCLN)
+#define HOME_SCLN RCTL_T(KC_SCLN)
 
 // Left-hand home row (number layer) mods
-#define HOME_1 LGUI_T(KC_1)
+#define HOME_1 LCTL_T(KC_1)
 #define HOME_2 LALT_T(KC_2)
-#define HOME_3 LCTL_T(KC_3)
+#define HOME_3 LGUI_T(KC_3)
 #define HOME_4 LSFT_T(KC_4)
 
 // Right-hand home row mods
 #define HOME_7 RSFT_T(KC_7)
-#define HOME_8 RCTL_T(KC_8)
+#define HOME_8 RGUI_T(KC_8)
 #define HOME_9 RALT_T(KC_9)
-#define HOME_0 RGUI_T(KC_0)
+#define HOME_0 RCTL_T(KC_0)
 
 // Left-hand home row (number layer) mods
-#define HM_GRV  LGUI_T(KC_GRV)
+#define HM_GRV  LCTL_T(KC_GRV)
 #define HM_MINS LALT_T(KC_MINS)
-#define HM_EQL  LCTL_T(KC_EQL)
+#define HM_EQL  LGUI_T(KC_EQL)
 #define HM_BSLS LSFT_T(KC_BSLS)
 
 // Right-hand home row mods
 #define HM_LBRC RSFT_T(KC_LBRC)
-#define HM_RBRC RCTL_T(KC_RBRC)
+#define HM_RBRC RGUI_T(KC_RBRC)
 
 // Right-hand func layer home row mods
 #define RHM_DOWN RSFT_T(KC_DOWN)
-#define RHM_UP RCTL_T(KC_UP)
+#define RHM_UP RGUI_T(KC_UP)
 #define RHM_RGHT RALT_T(KC_RIGHT)
 
 // Left-hand func layer home row mods
-#define HM_DEL RGUI_T(KC_DEL)
+#define HM_DEL RCTL_T(KC_DEL)
 #define LHM_LEFT RALT_T(KC_LEFT)
-#define LHM_DOWN RCTL_T(KC_DOWN)
+#define LHM_DOWN RGUI_T(KC_DOWN)
 #define LHM_UP RSFT_T(KC_UP)
 
 // Modified keys
@@ -105,9 +105,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,  HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SCLN,XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
+      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_QUOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                      KC_BSPC,KC_ESC,SPC_LT(L_FUNC),  ENT_LT(L_SYM),TB_LT(L_NUM),QT_LT(L_TRANS)
+                                      KC_BSPC,KC_ESC,SPC_LT(L_FUNC),  ENT_LT(L_SYM),TB_LT(L_NUM),KC_DEL
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_TILD, KC_UNDS, KC_PLUS, KC_PIPE, XXXXXXX,                      XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, RGB_MOD,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RGUI, XXXXXXX,
+      XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, RGB_MOD,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RCTL, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        EE_CLR, XXXXXXX, KC_PGUP, KC_PGDN, XXXXXXX,  KC_ENT,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -140,9 +140,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HM_DEL,LHM_LEFT,LHM_DOWN,  LHM_UP, KC_RIGHT,                      KC_LEFT,RHM_DOWN, RHM_UP,RHM_RGHT, KC_RGUI, XXXXXXX,
+      XXXXXXX,  HM_DEL,LHM_LEFT,LHM_DOWN,  LHM_UP, KC_RIGHT,                      KC_LEFT,RHM_DOWN, RHM_UP,RHM_RGHT, KC_RCTL, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, KC_PSCR,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, XXXXXXX, XXXXXXX,
+      XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, KC_PSCR,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_BSPC, RGB_MOD, KC_PGUP,    KC_PGDN, KC_TAB, RGB_TOG
                                       //`--------------------------'  `--------------------------'
