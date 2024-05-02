@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 130
+#define QUICK_TAP_TERM 0
 #define PERMISSIVE_HOLD
 
 // Turn on caps word by pressing lsft and rsft simultaneously
