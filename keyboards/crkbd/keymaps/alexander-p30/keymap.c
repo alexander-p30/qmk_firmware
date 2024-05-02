@@ -96,7 +96,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define L_FUNC 3
 #define L_GAME 4
 #define L_GAME_NUM 5
-#define L_TRANS 6
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -121,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, KC_MPLY, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPRV,                      KC_MNXT, KC_CAPS, CEDILLA, XXXXXXX, XXXXXXX, XXXXXXX,
 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
+                                         XXXXXXX,DF(L_GAME),KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -172,19 +171,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             KC_LGUI,DF(L_BASE),KC_SPC,     KC_ENT,DF(L_BASE), KC_RALT
                                         //`--------------------------'  `--------------------------'
-
-  ),
-
-  [L_TRANS] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                       DF(L_GAME), XXXXXXX,  KC_ENT,     KC_SPC, XXXXXXX, DF(L_GAME)
-                                      //`--------------------------'  `--------------------------'
 
   ),
 };
@@ -286,7 +272,6 @@ void oled_render_layer_state(void) {
     if (layer_state_is(L_FUNC)) oled_write_P(PSTR("FUNC"), inverted);
     if (biton32(default_layer_state) == L_GAME && layer_state_is(L_BASE)) oled_write_P(PSTR("GAME"), inverted);
     if (layer_state_is(L_GAME_NUM)) oled_write_P(PSTR("GME_N"), inverted);
-    if (layer_state_is(L_TRANS)) oled_write_P(PSTR("TRNS"), inverted);
 }
 
 bool oled_task_user(void) {
