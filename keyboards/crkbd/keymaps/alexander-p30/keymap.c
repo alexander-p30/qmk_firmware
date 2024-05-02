@@ -45,9 +45,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOME_0 RCTL_T(KC_0)
 
 // Left-hand home row (number layer) mods
-#define HM_GRV  LCTL_T(KC_GRV)
+#define HM_GRV LCTL_T(KC_GRV)
 #define HM_MINS LALT_T(KC_MINS)
-#define HM_EQL  LGUI_T(KC_EQL)
+#define HM_EQL LGUI_T(KC_EQL)
 #define HM_BSLS LSFT_T(KC_BSLS)
 
 // Right-hand home row mods
@@ -99,150 +99,148 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define L_TRANS 6
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [L_BASE] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SCLN,XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_QUOT, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                      KC_BSPC,KC_ESC,SPC_LT(L_FUNC),  ENT_LT(L_SYM),TB_LT(L_NUM),KC_DEL
-                                      //`--------------------------'  `--------------------------'
-  ),
+    [L_BASE] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        XXXXXXX, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, HOME_A, HOME_S, HOME_D, HOME_F, KC_G, KC_H, HOME_J, HOME_K, HOME_L, HOME_SCLN, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        KC_BSPC, KC_ESC, SPC_LT(L_FUNC), ENT_LT(L_SYM), TB_LT(L_NUM), KC_DEL
+        //`--------------------------'  `--------------------------'
+        ),
 
-  [L_NUM] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HOME_1,  HOME_2,  HOME_3,  HOME_4,    KC_5,                         KC_6,  HOME_7,  HOME_8,  HOME_9,  HOME_0, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_MPLY, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPRV,                      KC_MNXT, KC_CAPS, CEDILLA, XXXXXXX, XXXXXXX, XXXXXXX,
+    [L_NUM] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        XXXXXXX, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, HOME_1, HOME_2, HOME_3, HOME_4, KC_5, KC_6, HOME_7, HOME_8, HOME_9, HOME_0, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, KC_MPLY, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPRV, KC_MNXT, KC_CAPS, CEDILLA, XXXXXXX, XXXXXXX, XXXXXXX,
 
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
-  ),
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, KC_SPC, KC_ENT, XXXXXXX, XXXXXXX
+        //`--------------------------'  `--------------------------'
+        ),
 
-  [L_SYM] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_TILD, KC_UNDS, KC_PLUS, KC_PIPE, XXXXXXX,                      XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HM_GRV, HM_MINS,  HM_EQL, HM_BSLS, RGB_MOD,                      XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RCTL, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       EE_CLR, XXXXXXX, KC_PGUP, KC_PGDN, XXXXXXX,  KC_ENT,                      XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX,  KC_SPC,     KC_ENT, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
-  ),
+    [L_SYM] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        XXXXXXX, KC_TILD, KC_UNDS, KC_PLUS, KC_PIPE, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, HM_GRV, HM_MINS, HM_EQL, HM_BSLS, RGB_MOD, XXXXXXX, HM_LBRC, HM_RBRC, KC_RALT, KC_RCTL, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        EE_CLR, XXXXXXX, KC_PGUP, KC_PGDN, XXXXXXX, KC_ENT, XXXXXXX, KC_BRID, KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, KC_SPC, KC_ENT, XXXXXXX, XXXXXXX
+        //`--------------------------'  `--------------------------'
+        ),
 
-  [L_FUNC] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,  HM_DEL,LHM_LEFT,LHM_DOWN,  LHM_UP, KC_RIGHT,                      KC_LEFT,RHM_DOWN, RHM_UP,RHM_RGHT, KC_RCTL, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, SC_PGUP, C_PGUP,  C_PGDN,  SC_PGDN, KC_PSCR,                      KC_PGUP,  KC_END, KC_HOME, KC_PGDN, KC_SLSH, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, RGB_MOD, KC_PGUP,    KC_PGDN, KC_TAB, RGB_TOG
-                                      //`--------------------------'  `--------------------------'
-  ),
+    [L_FUNC] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, HM_DEL, LHM_LEFT, LHM_DOWN, LHM_UP, KC_RIGHT, KC_LEFT, RHM_DOWN, RHM_UP, RHM_RGHT, KC_RCTL, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, SC_PGUP, C_PGUP, C_PGDN, SC_PGDN, KC_PSCR, KC_PGUP, KC_END, KC_HOME, KC_PGDN, KC_SLSH, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        KC_BSPC, RGB_MOD, KC_PGUP, KC_PGDN, KC_TAB, RGB_TOG
+        //`--------------------------'  `--------------------------'
+        ),
 
-  [L_GAME] = LAYOUT_split_3x6_3(
-    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_RSFT,
-    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
- LCTL_T(KC_ESC),    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
-    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_BSPC,
-    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         KC_LGUI,MO(L_GAME_NUM),KC_SPC,     KC_ENT,MO(L_GAME_NUM), KC_LALT
-                                        //`--------------------------'  `--------------------------'
+    [L_GAME] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_RSFT,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        LCTL_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSPC,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        KC_LGUI, MO(L_GAME_NUM), KC_SPC, KC_ENT, MO(L_GAME_NUM), KC_LALT
+        //`--------------------------'  `--------------------------'
 
-  ),
+        ),
 
-  [L_GAME_NUM] = LAYOUT_split_3x6_3(
-    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-         KC_TAB,  KC_GRV, KC_MINS,  KC_EQL, KC_BSLS, KC_TILD,                      XXXXXXX, KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_RSFT,
-    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
- LCTL_T(KC_ESC),    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_DEL,
-    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
-    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            KC_LGUI,DF(L_BASE),KC_SPC,     KC_ENT,DF(L_BASE), KC_RALT
-                                        //`--------------------------'  `--------------------------'
+    [L_GAME_NUM] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        KC_TAB, KC_GRV, KC_MINS, KC_EQL, KC_BSLS, KC_TILD, XXXXXXX, KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_RSFT,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        LCTL_T(KC_ESC), KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        KC_LGUI, DF(L_BASE), KC_SPC, KC_ENT, DF(L_BASE), KC_RALT
+        //`--------------------------'  `--------------------------'
 
-  ),
+        ),
 
-  [L_TRANS] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                       DF(L_GAME), XXXXXXX,  KC_ENT,     KC_SPC, XXXXXXX, DF(L_GAME)
-                                      //`--------------------------'  `--------------------------'
+    [L_TRANS] = LAYOUT_split_3x6_3(
+        //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+        DF(L_GAME), XXXXXXX, KC_ENT, KC_SPC, XXXXXXX, DF(L_GAME)
+        //`--------------------------'  `--------------------------'
 
-  ),
+        ),
 
 };
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  /* if (!is_keyboard_master()) { */
-  /*   return OLED_ROTATION_180;  // flips the display 180 degrees if offhand */
-  /* } */
-  return rotation;
+    /* if (!is_keyboard_master()) { */
+    /*   return OLED_ROTATION_180;  // flips the display 180 degrees if offhand */
+    /* } */
+    return rotation;
 }
 
-#define IDLE_FRAMES 1
-#define IDLE_SPEED 35 // below this wpm value your animation will idle
+#    define IDLE_FRAMES 1
+#    define IDLE_SPEED 35 // below this wpm value your animation will idle
 
-#define TAP_FRAMES 5
-#define TAP_SPEED 50
+#    define TAP_FRAMES 5
+#    define TAP_SPEED 50
 
-#define ANIM_FRAME_DURATION 100 // how long each frame lasts in ms
-#define ANIM_SIZE 512 // number of bytes in array, minimize for adequate firmware size, max is 1024
+#    define ANIM_FRAME_DURATION 100 // how long each frame lasts in ms
+#    define ANIM_SIZE 512           // number of bytes in array, minimize for adequate firmware size, max is 1024
 
-uint32_t anim_timer = 0;
-uint32_t anim_sleep = 0;
-uint8_t current_idle_frame = 0;
-uint8_t current_tap_frame = 0;
+uint32_t anim_timer         = 0;
+uint32_t anim_sleep         = 0;
+uint8_t  current_idle_frame = 0;
+uint8_t  current_tap_frame  = 0;
 
-static const char PROGMEM lambda[ANIM_SIZE] = LAMBDA;
+static const char PROGMEM lambda[ANIM_SIZE]          = LAMBDA;
 static const char PROGMEM glitched_lambda[ANIM_SIZE] = GLITCHED_LAMBDA;
 static const char PROGMEM inverted_lambda[ANIM_SIZE] = INVERTED_LAMBDA;
 
 static void render_anim(void) {
-    static const char * idle[IDLE_FRAMES] = { lambda };
+    static const char *idle[IDLE_FRAMES] = {lambda};
 
-    static const char * tap[TAP_FRAMES] = {
-        glitched_lambda, glitched_lambda, lambda, glitched_lambda, lambda
-    };
+    static const char *tap[TAP_FRAMES] = {glitched_lambda, glitched_lambda, lambda, glitched_lambda, lambda};
 
     void animation_phase(void) {
-        if(get_current_wpm() <=IDLE_SPEED){
+        if (get_current_wpm() <= IDLE_SPEED) {
             current_idle_frame = (current_idle_frame + 1) % IDLE_FRAMES;
-            oled_write_raw_P(idle[abs((IDLE_FRAMES-1)-current_idle_frame)], ANIM_SIZE);
-         } else {
-             current_tap_frame = (current_tap_frame + 1) % TAP_FRAMES;
-             oled_write_raw_P(tap[abs((TAP_FRAMES-1)-current_tap_frame)], ANIM_SIZE);
-         }
+            oled_write_raw_P(idle[abs((IDLE_FRAMES - 1) - current_idle_frame)], ANIM_SIZE);
+        } else {
+            current_tap_frame = (current_tap_frame + 1) % TAP_FRAMES;
+            oled_write_raw_P(tap[abs((TAP_FRAMES - 1) - current_tap_frame)], ANIM_SIZE);
+        }
     }
-    if(get_current_wpm() != 000) {
+    if (get_current_wpm() != 000) {
         oled_on();
-        if(timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
+        if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
             anim_timer = timer_read32();
             animation_phase();
         }
         anim_sleep = timer_read32();
     } else {
-        if(timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
+        if (timer_elapsed32(anim_sleep) > OLED_TIMEOUT) {
             oled_off();
         } else {
-            if(timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
+            if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
                 anim_timer = timer_read32();
                 animation_phase();
             }
@@ -255,22 +253,24 @@ void oled_render_logo(void) {
 }
 
 void oled_render_caps(void) {
-  oled_write_raw_P(inverted_lambda, sizeof(inverted_lambda));
+    oled_write_raw_P(inverted_lambda, sizeof(inverted_lambda));
 }
 
 bool caps_word_active = 0;
 
 void maybe_render_caps(void) {
-   led_t led_state = host_keyboard_led_state();
+    led_t led_state = host_keyboard_led_state();
 
-   if (led_state.caps_lock || caps_word_active) {
-     oled_render_caps();
-   } else {
-     oled_clear();
-   }
+    if (led_state.caps_lock || caps_word_active) {
+        oled_render_caps();
+    } else {
+        oled_clear();
+    }
 }
 
-void caps_word_set_user(bool active) { caps_word_active = active; }
+void caps_word_set_user(bool active) {
+    caps_word_active = active;
+}
 
 bool previous_caps_active = 0;
 
@@ -278,36 +278,28 @@ void oled_render_layer_state(void) {
     oled_set_cursor(0, 0);
     bool inverted = caps_word_active || host_keyboard_led_state().caps_lock;
 
-    if(biton32(default_layer_state) == L_BASE && layer_state_is(L_BASE))
-        oled_write_P(PSTR("BASE"), inverted);
-    if(layer_state_is(L_NUM))
-        oled_write_P(PSTR("NUM"), inverted);
-    if(layer_state_is(L_SYM))
-        oled_write_P(PSTR("SYM"), inverted);
-    if(layer_state_is(L_FUNC))
-        oled_write_P(PSTR("FUNC"), inverted);
-    if(biton32(default_layer_state) == L_GAME && layer_state_is(L_BASE))
-        oled_write_P(PSTR("GAME"), inverted);
-    if(layer_state_is(L_GAME_NUM))
-        oled_write_P(PSTR("GME_N"), inverted);
-    if(layer_state_is(L_TRANS))
-        oled_write_P(PSTR("TRNS"), inverted);
+    if (biton32(default_layer_state) == L_BASE && layer_state_is(L_BASE)) oled_write_P(PSTR("BASE"), inverted);
+    if (layer_state_is(L_NUM)) oled_write_P(PSTR("NUM"), inverted);
+    if (layer_state_is(L_SYM)) oled_write_P(PSTR("SYM"), inverted);
+    if (layer_state_is(L_FUNC)) oled_write_P(PSTR("FUNC"), inverted);
+    if (biton32(default_layer_state) == L_GAME && layer_state_is(L_BASE)) oled_write_P(PSTR("GAME"), inverted);
+    if (layer_state_is(L_GAME_NUM)) oled_write_P(PSTR("GME_N"), inverted);
+    if (layer_state_is(L_TRANS)) oled_write_P(PSTR("TRNS"), inverted);
 }
 
 bool oled_task_user(void) {
     bool caps_active = caps_word_active || host_keyboard_led_state().caps_lock;
 
     if (is_keyboard_master()) {
-      if (caps_active != previous_caps_active)
-        oled_clear();
+        if (caps_active != previous_caps_active) oled_clear();
 
-      if ((previous_caps_active = caps_active)) {
-        oled_render_caps();
-        oled_render_layer_state();
-      } else {
-        render_anim();
-        oled_render_layer_state();
-      }
+        if ((previous_caps_active = caps_active)) {
+            oled_render_caps();
+            oled_render_layer_state();
+        } else {
+            render_anim();
+            oled_render_layer_state();
+        }
     } else {
         oled_render_logo();
     }
